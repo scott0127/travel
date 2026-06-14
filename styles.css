@@ -368,6 +368,16 @@ h1 {
   color: #fff;
 }
 
+.source-mini {
+  background: rgba(228, 111, 79, 0.12);
+  color: var(--coral);
+}
+
+.source-mini.muted {
+  background: rgba(109, 118, 115, 0.12);
+  color: var(--muted);
+}
+
 .preview-panel {
   position: sticky;
   top: 18px;

@@ -85,6 +85,209 @@ const photoPools = {
   default: [images.seomyeon, images.haeundaeBeach, images.coffee],
 };
 
+function photo(url, source, sourceUrl) {
+  return { url, source, sourceUrl };
+}
+
+const sourcePages = {
+  tripleAirport: "https://triple.guide/attractions/7887e0b4-3bb8-47da-859d-8fabe7d172bf",
+  tripleAirportInfo: "https://triple.guide/articles/8d154912-00c3-4d17-b91b-dc3ca2eac643",
+  hotel: "https://urban-groove-seomyeon.busan-hotel.com/en/",
+  eggdrop: "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=46417",
+  gamcheon: "https://triple.guide/attractions/09ee4020-dc43-4f27-b9a6-c2ec34684764",
+  huinnyeoul: "https://triple.guide/attractions/7ac80a45-4df8-4d81-a31a-fe8321910051",
+  merci: "https://triple.guide/restaurants/daf695c3-e0dc-4d45-9ace-f0296954dcee",
+  momos: "https://triple.guide/restaurants/4bfbb5db-2df4-4e18-9a13-708dd20b5139",
+  momosMapstr: "https://mapstr.com/place/C75O3UBn8L",
+  thrill: "https://triple.guide/restaurants/37055731-95e3-4c84-b48e-7ae64b589ee2",
+  songdoCable: "https://triple.guide/attractions/664a4797-1a14-4d60-b251-2b72d262fd7a",
+  songdoBridge: "https://triple.guide/attractions/449ea3c3-69d3-4c1d-a202-9c962b2fb7eb",
+  haechi: "https://www.bigfang.tw/blog/post/83haechi-bbq-seomyeon",
+  haechiPolle: "https://polle.com/place/37Wx9a/83%20%ED%95%B4%EC%B9%98",
+  oliveYoung: "https://www.studioconte.net/landscape-1/%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81-%EC%84%9C%EB%A9%B4%ED%83%80%EC%9A%B4%EC%A0%90",
+  oliveNews: "https://corp.oliveyoung.com/ko/news/22?category=&pg=1",
+  lasoop: "https://rudalsfprh.tistory.com/48",
+  cove: "https://triple.guide/hotels/bc71e54e-2169-450a-bc00-e78111dd1186",
+  codSoup: "https://triple.guide/restaurants/daf695c3-e0dc-4d45-9ace-f0296954dcee",
+  mumu: "https://triple.guide/restaurants/4515688b-01f5-4aa6-8b33-23e4f4f1eae5",
+  bluelineMipo: "https://triple.guide/attractions/9da754a8-6789-46d4-8abe-b7966eccb4f0",
+  bluelineCheongsapo: "https://triple.guide/attractions/ef11bb82-5aee-41f6-a01a-73a5c36713a9",
+  cheongsapoBridge: "https://triple.guide/attractions/9add2a10-4fad-4146-8b58-a576fe768e44",
+  diart: "https://triple.guide/restaurants/71fda8d7-cf5b-4e25-8a7a-ef9cd5d4a0e0",
+  xSky: "https://triple.guide/attractions/91b00bef-56f1-4fd8-8931-3afc4033f9ce",
+  haemok: "https://triple.guide/restaurants/dd317d9b-9d03-445e-9db4-354f7e8f87d8",
+  haeundaeMarket: "https://triple.guide/attractions/4c6f4e97-f43a-472e-afc4-46459d55db1f",
+  yonggungsa: "https://triple.guide/attractions/1264eccd-3031-448c-b3e9-fdac7a1e161a",
+  luge: "https://triple.guide/attractions/a8627a16-69ea-455c-bca4-6544862fe9c6",
+  jeonpo: "https://triple.guide/attractions/a5bc0d88-f5c2-46d7-a294-c4081da2a7fd",
+  spaLand: "https://triple.guide/attractions/6d5b9203-b513-4967-8610-582e27db1ccb",
+  shinsegae: "https://triple.guide/attractions/e8cac020-e22e-49c6-a88d-cb2c8c7c9925",
+  nohong: "https://triple.guide/restaurants/aea32d1e-0497-48b1-8952-904c3302ecb6",
+  porkSoup: "https://triple.guide/restaurants/a90626a8-e89a-46cd-bd86-19aa2a5d9b8c",
+  delight: "https://corp.oliveyoung.com/ko/news/58?category=OYN&pg=1",
+  delightNewsroom: "https://newsroom.cj.net/a-new-must-visit-in-busan-olive-youngs-first-korean-snacks-store/",
+};
+
+const verifiedPhotos = {
+  "BUSAN 釜山 PUS Terminal I": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/0eaa3808-a606-447c-bdfa-59c8d427db98.jpeg", "Triple 김해 국제공항", sourcePages.tripleAirport),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/68096d97-2257-41ed-bc8e-9d169543dbb1.jpeg", "Triple 김해 국제공항", sourcePages.tripleAirport),
+    photo(images.airport, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Gimhae_International_Airport.jpg"),
+  ],
+  "Urban Groove Hotel": [
+    photo("https://urban-groove-seomyeon.busan-hotel.com/data/Imgs/1080x700w/16339/1633931/1633931582/img-urban-groove-hotel-seomyeon-busan-1.JPEG", "Urban Groove hotel gallery", sourcePages.hotel),
+    photo("https://urban-groove-seomyeon.busan-hotel.com/data/Imgs/450x450w/16339/1633931/1633931411/img-urban-groove-hotel-seomyeon-busan-2.JPEG", "Urban Groove hotel gallery", sourcePages.hotel),
+    photo("https://urban-groove-seomyeon.busan-hotel.com/data/Imgs/450x450w/16339/1633931/1633931419/img-urban-groove-hotel-seomyeon-busan-3.JPEG", "Urban Groove hotel gallery", sourcePages.hotel),
+    photo("https://urban-groove-seomyeon.busan-hotel.com/data/Imgs/450x450w/16339/1633931/1633931431/img-urban-groove-hotel-seomyeon-busan-4.JPEG", "Urban Groove hotel gallery", sourcePages.hotel),
+  ],
+  "EGGDROP 西面店": [
+    photo("https://tong.visitkorea.or.kr/cms/resource/61/3109061_image2_1.jpg", "Visit Korea EGGDROP Seomyeon Lotte Back Gate", sourcePages.eggdrop),
+    photo("https://tong.visitkorea.or.kr/cms/resource/62/3109062_image2_1.jpg", "Visit Korea EGGDROP Seomyeon Lotte Back Gate", sourcePages.eggdrop),
+    photo("https://tong.visitkorea.or.kr/cms/resource/63/3109063_image2_1.jpg", "Visit Korea EGGDROP Seomyeon Lotte Back Gate", sourcePages.eggdrop),
+    photo("https://tong.visitkorea.or.kr/cms/resource/64/3109064_image2_1.jpg", "Visit Korea EGGDROP Seomyeon Lotte Back Gate", sourcePages.eggdrop),
+  ],
+  甘川洞文化村: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/8963246c-2f7d-4d6b-8a02-2ef38909de75.jpg", "Triple 감천 문화 마을", sourcePages.gamcheon),
+    photo(images.gamcheon, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Colorful_houses_in_Gamcheon_Culture_Village_at_sunset_in_Busan_South_Korea.jpg"),
+  ],
+  "merci nook": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/aadb7fa5-ab03-4ba6-9d8f-26516c6f8488.jpeg", "Triple 메르시누크", sourcePages.merci),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/76eb293a-5473-4763-be36-4f8b445e625b.jpeg", "Triple 메르시누크", sourcePages.merci),
+  ],
+  白淺灘文化村步道: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/dad0039e-3fe7-4648-b972-2e5a8aeb7e00.jpeg", "Triple 흰여울 문화 마을", sourcePages.huinnyeoul),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/e834d5a8-70c4-4677-899c-2b483a2d8b4f.jpeg", "Triple 흰여울 문화 마을", sourcePages.huinnyeoul),
+    photo(images.huinnyeoul, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Huinnyeoul_Culture_Village.jpg"),
+  ],
+  "Momos Coffee 影島店": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/74ae9deb-df25-4fa4-9311-a10ead80079c.jpeg", "Triple 모모스 커피 영도 로스터리 앤 커피 바", sourcePages.momos),
+    photo("https://images.mapstr.com/e936fe829914c79077e5602ef3271709_profilePhoto.jpg", "Mapstr Momos Coffee Yeongdo", sourcePages.momosMapstr),
+    photo("https://images.mapstr.com/1c02e0a9f84a11141ca0584feef60b9b_mamieboude.jpg", "Mapstr Momos Coffee Yeongdo", sourcePages.momosMapstr),
+  ],
+  "THRILL ON THE MUG": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/e2a40356-0880-4ee5-b5ea-242956bfe181.jpeg", "Triple 스릴 온 더 머그", sourcePages.thrill),
+  ],
+  松島海上纜車站: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/9c781c1e-6694-448b-b70e-bb6007af2bb2.jpeg", "Triple 송도해상케이블카", sourcePages.songdoCable),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/35988a77-22e7-44b0-ba4e-41c43e43122e.jpeg", "Triple 송도해상케이블카", sourcePages.songdoCable),
+    photo(images.songdo, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Songdo_Beach_Area_and_Namhang_Bridge_in_Busan.jpg"),
+  ],
+  "松島纜車 + 龍宮雲橋": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/fe0c294a-c0eb-41dc-947c-b9c494d2c2ac.jpeg", "Triple 송도 용궁 구름다리", sourcePages.songdoBridge),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/36c71359-8493-48b9-b899-3141f8727d58.jpeg", "Triple 송도 용궁 구름다리", sourcePages.songdoBridge),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/5fd3e293-60b4-4d72-b15b-05a11b7d9593.jpeg", "Triple 송도 용궁 구름다리", sourcePages.songdoBridge),
+  ],
+  "83獬豸": [
+    photo("https://img.bigfang.tw/2024/09/1727089211-4efdd2f969559e8b1c92e99f32ded48e.jpg", "樂活的大方 83 Haechi 西面店", sourcePages.haechi),
+    photo("https://d2uja84sd90jmv.cloudfront.net/posts/SG4DhcvoAgg699uh_7QcEg/ms.jpg?updated=-62167392000", "Polle 83 해치", sourcePages.haechiPolle),
+    photo("https://d2uja84sd90jmv.cloudfront.net/posts/6S6E_eq6bewVstoOUZvIjw/ms.jpg?updated=-62167392000", "Polle 83 해치", sourcePages.haechiPolle),
+  ],
+  "OLIVE YOUNG 西面 Town 店": [
+    photo("https://static.wixstatic.com/media/ea1beb_88b8df3264ec4be5a0208b78807c9cfa~mv2.jpg/v1/fill/w_1302,h_864,q_90,enc_avif,quality_auto/ea1beb_88b8df3264ec4be5a0208b78807c9cfa~mv2.jpg", "Studio Conte OLIVE YOUNG Seomyeon-town", sourcePages.oliveYoung),
+    photo("https://static.wixstatic.com/media/ea1beb_35a55fe60f5442c9a9427141db54f001~mv2.jpg/v1/fill/w_638,h_864,q_90,enc_avif,quality_auto/ea1beb_35a55fe60f5442c9a9427141db54f001~mv2.jpg", "Studio Conte OLIVE YOUNG Seomyeon-town", sourcePages.oliveYoung),
+    photo("https://d10yximrhdxai4.cloudfront.net/news/73bdf4083f72442596280d779e25ea12.jpg", "CJ Olive Young news", sourcePages.oliveNews),
+  ],
+  LASOOP: [
+    photo("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbfJVV5%2FdJMcaiQOLMn%2FAAAAAAAAAAAAAAAAAAAAAAMqc47NscJkB0JbFmT-c068rHCc8mWY0XZXbgJVX0Uj%2Fimg.png", "Tistory LASOOP Busan Seomyeon", sourcePages.lasoop),
+    photo("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FcEuPPI%2FdJMcaiQOLMl%2FAAAAAAAAAAAAAAAAAAAAAIqVI_3l2WTVz_s34r0lOnEOayYVgN5soA-L4hBzVntU%2Fimg.png", "Tistory LASOOP Busan Seomyeon", sourcePages.lasoop),
+    photo("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FPSuAT%2FdJMcajoBByf%2FAAAAAAAAAAAAAAAAAAAAAOBahftp-RKbyhU8ruuKuRsvtupdZa8B_8mlyDGYOk0g%2Fimg.png", "Tistory LASOOP Busan Seomyeon", sourcePages.lasoop),
+  ],
+  "Cove Stay Haeundae": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/39a6d231-9ae7-46dc-8e0f-0e2f47b23d6b", "Triple 코브스테이 해운대", sourcePages.cove),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/ab85eb46-3fac-4330-ae77-430c20d99976", "Triple 코브스테이 해운대", sourcePages.cove),
+  ],
+  瓦房鱈魚湯: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/aadb7fa5-ab03-4ba6-9d8f-26516c6f8488.jpeg", "Triple 해운대 기와집 대구탕", sourcePages.codSoup),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/76eb293a-5473-4763-be36-4f8b445e625b.jpeg", "Triple 해운대 기와집 대구탕", sourcePages.codSoup),
+  ],
+  "Who's Who MUMU Bakery": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/5b47cdbc-a11e-4ea3-9b9a-b138e28c0781.jpeg", "Triple 후스 후 무무", sourcePages.mumu),
+  ],
+  "海雲台藍線公園 尾浦站": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/c1df1d40-6470-409c-bc55-decc5209947b.jpeg", "Triple 해운대블루라인파크 미포정거장", sourcePages.bluelineMipo),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/4b498fa9-b01d-4ff4-a20b-462db3102755.jpeg", "Triple 해운대블루라인파크 미포정거장", sourcePages.bluelineMipo),
+    photo(images.blueline, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Sky_Capsule_train_at_Haeundae_Blueline_Park,_Busan.jpg"),
+  ],
+  膠囊列車到青沙浦站: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/e4206afd-39ef-4203-80c5-ec661bb77f74.jpeg", "Triple 해운대블루라인파크 청사포정거장", sourcePages.bluelineCheongsapo),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/a0d88aea-425e-4892-b93c-86c353ead2b3.jpeg", "Triple 해운대블루라인파크 청사포정거장", sourcePages.bluelineCheongsapo),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/6c786206-99de-4298-ad28-fbaafdae3aef.jpeg", "Triple 해운대블루라인파크 청사포정거장", sourcePages.bluelineCheongsapo),
+  ],
+  青沙浦平交道拍照點: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/42d7e9df-90e2-4229-b8f8-633fe6dca476.jpg", "Triple 청사포 다릿돌 전망대", sourcePages.cheongsapoBridge),
+    photo(images.blueline, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Sky_Capsule_train_at_Haeundae_Blueline_Park,_Busan.jpg"),
+  ],
+  "DIART coffee 青沙浦店": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/58cf7e3d-e80d-4991-b169-71fee24b78af.jpg", "Triple 디아트 커피", sourcePages.diart),
+    photo("https://d3eojyj97pe1ag.cloudfront.net/1465/16346330092297285.jpg", "LOYQU DIART coffee", "https://en.loyqu.com/korea/busan/place/5ad86340-44ef-11f0-8844-0ad70370206b"),
+  ],
+  "釜山 X the SKY": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/710292bb-7962-424b-a4ec-573a10f16461.jpeg", "Triple 부산엑스더스카이", sourcePages.xSky),
+    photo(images.xsky, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Haeundae_Beach_20200522_005.jpg"),
+  ],
+  "海木 鰻魚飯": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/a088460f-046a-492f-bf8d-ecab0cd77335.jpeg", "Triple 해목", sourcePages.haemok),
+  ],
+  海雲台傳統市場: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/b301c3b8-b23e-44a2-adde-8ef3da5b5d93.jpeg", "Triple 해운대 시장", sourcePages.haeundaeMarket),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/c783a06b-fb66-40c5-898f-5dd0b97e4174.jpg", "Triple 해운대 시장", sourcePages.haeundaeMarket),
+    photo(images.haeundaeMarket, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Haeundae_market_(%ED%95%B4%EC%9A%B4%EB%8C%80%EC%8B%9C%EC%9E%A5).JPG"),
+  ],
+  海東龍宮寺: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/446fed06-c23d-44c5-aa93-86f61bb67406.jpeg", "Triple 해동 용궁사", sourcePages.yonggungsa),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/34325e45-4a87-45b6-b16b-2561057df8a8.jpeg", "Triple 해동 용궁사", sourcePages.yonggungsa),
+    photo(images.yonggungsa, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Haedong_Yonggungsa_Temple,_Busan,_South_Korea.jpg"),
+  ],
+  "Skyline Luge Busan": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/58a126d1-d2c5-4225-ae3f-590473f489fc.jpeg", "Triple 스카이라인 루지", sourcePages.luge),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/f46532af-a08e-4ca3-aea2-93f07fc89c7a.jpeg", "Triple 스카이라인 루지", sourcePages.luge),
+  ],
+  海雲台傳統市場吃中餐: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/b301c3b8-b23e-44a2-adde-8ef3da5b5d93.jpeg", "Triple 해운대 시장", sourcePages.haeundaeMarket),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/c783a06b-fb66-40c5-898f-5dd0b97e4174.jpg", "Triple 해운대 시장", sourcePages.haeundaeMarket),
+    photo(images.haeundaeMarket, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Haeundae_market_(%ED%95%B4%EC%9A%B4%EB%8C%80%EC%8B%9C%EC%9E%A5).JPG"),
+  ],
+  海雲台海邊: [
+    photo(images.haeundaeBeach, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Haeundae_Beach_NightView.jpg"),
+    photo(images.xsky, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Haeundae_Beach_20200522_005.jpg"),
+  ],
+  "廣安里 M 無人機燈光秀": [
+    photo(images.gwangalli, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Busan_Gwangalli_Night.jpg"),
+  ],
+  海雲台傳統市場晚餐: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/73196ecc-d9e2-4cd7-8151-4e4c0232c7a2.jpeg", "Triple 노홍 만두", sourcePages.nohong),
+  ],
+  田浦咖啡街: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/c0cc0c4b-656a-492b-a55b-b30c1849fef9.jpeg", "Triple 전포 카페 거리", sourcePages.jeonpo),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/78ea3582-b7c4-4b5e-96e4-08bad36fb743.jpeg", "Triple 전포 카페 거리", sourcePages.jeonpo),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/732ab7f7-b0f3-4db8-af40-aef4b2613c93.jpeg", "Triple 전포 카페 거리", sourcePages.jeonpo),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/3f14a22e-3db5-4512-b254-225a5bacfad9.jpeg", "Triple 전포 카페 거리", sourcePages.jeonpo),
+  ],
+  "新世界百貨 Centum City 汗蒸幕": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/9663312b-0910-4682-92bb-6e2deee35110.jpeg", "Triple 스파랜드 신세계 백화점 센텀시티 점", sourcePages.spaLand),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/9308063a-57d2-4290-b040-a5894f9e9987.jpeg", "Triple 스파랜드 신세계 백화점 센텀시티 점", sourcePages.spaLand),
+  ],
+  "新世界 B1/B2 伴手禮": [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/8852283a-fc04-4874-bbc1-13a069bbb611.jpeg", "Triple 신세계 백화점 센텀시티 점", sourcePages.shinsegae),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/d087f6e2-3de6-4e62-a1c4-70d883923c45.jpeg", "Triple 신세계 백화점 센텀시티 점", sourcePages.shinsegae),
+    photo(images.shinsegae, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Shinsegae_in_Busan-_Guinness_World_Record.jpg"),
+  ],
+  水邊最高豬肉湯飯: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/ca9fe85f-062e-49c4-bb49-0d34ca591a87.jpeg", "Triple 수변 최고 돼지국밥 해운대 점", sourcePages.porkSoup),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/a916ee20-341a-4c88-b17f-5a85068ade95.jpeg", "Triple 수변 최고 돼지국밥 미포 점", "https://triple.guide/restaurants/e1e6c43d-e0fe-43d0-948e-e4cb7e57916b"),
+  ],
+  "Delight Project": [
+    photo("https://d10yximrhdxai4.cloudfront.net/editor/2797cb7a3ae9422b99ddc3564d4f99c2.jpg", "CJ Olive Young Delight Project news", sourcePages.delight),
+    photo("https://d10yximrhdxai4.cloudfront.net/news/f4dbc88156554b37b2e44ff0b01c1dce.png", "CJ Olive Young Delight Project news", sourcePages.delight),
+    photo("https://img.newsroom.cj.net/wp-content/uploads/2025/12/CJ-Newsroom-Olive-Youngs-First-Korean-Snacks-Store-1.jpg", "CJ Newsroom Delight Project", sourcePages.delightNewsroom),
+  ],
+  海雲台前往機場: [
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/137a4427-2509-4780-8c1c-80bf1150eb4f.jpeg", "Triple 김해 국제공항 안내", sourcePages.tripleAirportInfo),
+    photo("https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/0eaa3808-a606-447c-bdfa-59c8d427db98.jpeg", "Triple 김해 국제공항", sourcePages.tripleAirport),
+    photo(images.airport, "Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Gimhae_International_Airport.jpg"),
+  ],
+};
+
 const stops = [
   {
     day: "DAY1",
@@ -506,7 +709,7 @@ const stops = [
   },
 ].map((stop, index) => {
   const normalizedQuery = stop.query || `${stop.korean || stop.title} Busan South Korea`;
-  const photos = [];
+  const photos = verifiedPhotos[stop.title] || [];
   return {
     ...stop,
     id: `stop-${index + 1}`,
@@ -514,7 +717,7 @@ const stops = [
     mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(normalizedQuery)}`,
     embedUrl: `https://www.google.com/maps?q=${encodeURIComponent(normalizedQuery)}&output=embed`,
     imageSearchUrl: `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(`${normalizedQuery} photos`)}`,
-    exactImage: exactImages.has(photos[0]),
+    exactImage: photos.length > 0,
   };
 });
 
@@ -620,13 +823,21 @@ function renderTimeline() {
 }
 
 function renderCard(stop) {
+  const leadPhoto = stop.photos[0];
+  const thumb = leadPhoto
+    ? `<img src="${escapeHtml(leadPhoto.url)}" alt="${escapeHtml(stop.title)} 縮圖" referrerpolicy="no-referrer" loading="lazy" />`
+    : `<div class="thumb-placeholder">
+        <span>照片待核對</span>
+        <small>先用地圖與圖片搜尋確認</small>
+      </div>`;
+  const sourceBadge = stop.photos.length
+    ? `<span class="mini-link source-mini">${stop.photos.length} 張來源圖</span>`
+    : `<span class="mini-link source-mini muted">尚無穩定來源圖</span>`;
+
   return `
     <article class="place-card ${stop.id === activeStopId ? "active" : ""}" data-id="${stop.id}" tabindex="0">
       <div class="thumb">
-        <div class="thumb-placeholder">
-          <span>Google Maps</span>
-          <small>按地點連結查看真實相簿</small>
-        </div>
+        ${thumb}
       </div>
       <div class="card-body">
         <div class="card-topline"><span>${stop.day}</span><span class="time">${stop.time}</span><span>${stop.area}</span></div>
@@ -637,7 +848,7 @@ function renderCard(stop) {
         <div class="card-actions">
           <a class="mini-link map-direct-link" href="${stop.mapUrl}" target="_blank" rel="noreferrer">Google Maps 地點</a>
           <a class="mini-link" href="${stop.imageSearchUrl}" target="_blank" rel="noreferrer">Google 圖片搜尋</a>
-          <span class="mini-link">需 Places API</span>
+          ${sourceBadge}
         </div>
       </div>
     </article>
@@ -674,30 +885,33 @@ function renderPreviewPhoto(stop = getActiveStop()) {
     preview.media.classList.add("no-google-photo");
     preview.image.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
     preview.image.alt = "";
-    preview.badge.textContent = "未載入 Google Maps 照片";
-    preview.counter.textContent = "需 API";
+    preview.badge.textContent = "照片待核對";
+    preview.counter.textContent = "0 / 0";
     preview.prevPhoto.disabled = true;
     preview.nextPhoto.disabled = true;
     preview.thumbs.innerHTML = "";
+    preview.imageSearch.textContent = "圖片搜尋";
+    preview.imageSearch.href = stop.imageSearchUrl;
     return;
   }
 
   preview.media.classList.remove("no-google-photo");
   activePhotoIndex = (activePhotoIndex + photos.length) % photos.length;
   const currentPhoto = photos[activePhotoIndex];
-  const isExact = exactImages.has(currentPhoto);
 
-  preview.image.src = currentPhoto;
+  preview.image.src = currentPhoto.url;
   preview.image.alt = `${stop.title} 照片 ${activePhotoIndex + 1}`;
-  preview.badge.textContent = isExact ? "公開實景圖" : "類別參考圖";
+  preview.badge.textContent = "已核對來源";
   preview.counter.textContent = `${activePhotoIndex + 1} / ${photos.length}`;
+  preview.imageSearch.textContent = `照片來源：${currentPhoto.source}`;
+  preview.imageSearch.href = currentPhoto.sourceUrl || stop.imageSearchUrl;
   preview.prevPhoto.disabled = photos.length < 2;
   preview.nextPhoto.disabled = photos.length < 2;
   preview.thumbs.innerHTML = photos
     .map(
       (photo, index) => `
         <button class="gallery-thumb ${index === activePhotoIndex ? "active" : ""}" type="button" data-photo-index="${index}" aria-label="查看第 ${index + 1} 張照片">
-          <img src="${photo}" alt="" referrerpolicy="no-referrer" />
+          <img src="${escapeHtml(photo.url)}" alt="" referrerpolicy="no-referrer" />
         </button>
       `,
     )
