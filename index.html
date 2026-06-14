@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>釜山六天五夜景點規劃</title>
+    <link rel="preconnect" href="https://upload.wikimedia.org" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="source-label">Busan itinerary board</p>
+          <h1>釜山六天五夜景點規劃</h1>
+        </div>
+        <div class="top-actions">
+          <a class="ghost-link" href="https://docs.google.com/spreadsheets/d/1s7Fdxbe6zZmy50bW2XMkg1Oq1xIFPI0vM1_hxt90xHU/htmlview" target="_blank" rel="noreferrer">原始表格</a>
+          <a class="primary-link" id="selectedMapTop" href="#" target="_blank" rel="noreferrer">開啟目前地點</a>
+        </div>
+      </header>
+
+      <main class="planner">
+        <aside class="day-rail" aria-label="Day filters">
+          <button class="day-button active" data-day="all">全部</button>
+          <button class="day-button" data-day="DAY1">DAY 1</button>
+          <button class="day-button" data-day="DAY2">DAY 2</button>
+          <button class="day-button" data-day="DAY3">DAY 3</button>
+          <button class="day-button" data-day="DAY4">DAY 4</button>
+          <button class="day-button" data-day="DAY5">DAY 5</button>
+          <button class="day-button" data-day="DAY6">DAY 6</button>
+        </aside>
+
+        <section class="timeline-panel">
+          <div class="tool-row">
+            <div class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <input id="searchInput" type="search" placeholder="搜尋景點、韓文、備註" />
+            </div>
+            <div class="count-pill"><span id="visibleCount">0</span> 個地點</div>
+          </div>
+          <div id="timeline" class="timeline" aria-live="polite"></div>
+        </section>
+
+        <aside class="preview-panel" aria-label="Selected place preview">
+          <div class="preview-media">
+            <img id="previewImage" alt="" />
+            <button class="gallery-button gallery-button-prev" id="prevPhoto" type="button" aria-label="上一張照片">‹</button>
+            <button class="gallery-button gallery-button-next" id="nextPhoto" type="button" aria-label="下一張照片">›</button>
+            <span id="previewBadge" class="image-badge">Exact image</span>
+            <span id="photoCounter" class="photo-counter">1 / 1</span>
+          </div>
+          <div class="gallery-thumbs" id="galleryThumbs" aria-label="照片縮圖"></div>
+          <div class="preview-copy">
+            <p id="previewDay" class="preview-day"></p>
+            <h2 id="previewTitle"></h2>
+            <p id="previewKorean" class="preview-korean"></p>
+            <p id="previewMeta" class="preview-meta"></p>
+            <p id="previewNote" class="preview-note"></p>
+            <div class="preview-actions">
+              <a id="previewMap" class="primary-link" href="#" target="_blank" rel="noreferrer">Google Maps</a>
+              <a id="previewImageSearch" class="ghost-link" href="#" target="_blank" rel="noreferrer">圖片搜尋</a>
+            </div>
+          </div>
+          <iframe id="mapFrame" class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps preview"></iframe>
+          <p class="attribution">
+            圖片以 Wikimedia Commons 可嵌入照片優先；餐廳、咖啡廳、飯店若沒有穩定公開照片，使用類別參考圖並附 Google 圖片搜尋。
+          </p>
+        </aside>
+      </main>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
