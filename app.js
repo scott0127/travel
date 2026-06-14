@@ -506,7 +506,7 @@ const stops = [
   },
 ].map((stop, index) => {
   const normalizedQuery = stop.query || `${stop.korean || stop.title} Busan South Korea`;
-  const photos = buildPhotoSet(stop);
+  const photos = [];
   return {
     ...stop,
     id: `stop-${index + 1}`,
@@ -526,6 +526,8 @@ const selectedMapTop = document.querySelector("#selectedMapTop");
 
 const preview = {
   image: document.querySelector("#previewImage"),
+  media: document.querySelector(".preview-media"),
+  placeholder: document.querySelector("#photoPlaceholder"),
   badge: document.querySelector("#previewBadge"),
   counter: document.querySelector("#photoCounter"),
   prevPhoto: document.querySelector("#prevPhoto"),
@@ -621,7 +623,10 @@ function renderCard(stop) {
   return `
     <article class="place-card ${stop.id === activeStopId ? "active" : ""}" data-id="${stop.id}" tabindex="0">
       <div class="thumb">
-        <img src="${stop.image}" alt="${escapeHtml(stop.title)}" referrerpolicy="no-referrer" />
+        <div class="thumb-placeholder">
+          <span>Google Maps</span>
+          <small>按地點連結查看真實相簿</small>
+        </div>
       </div>
       <div class="card-body">
         <div class="card-topline"><span>${stop.day}</span><span class="time">${stop.time}</span><span>${stop.area}</span></div>
@@ -630,9 +635,9 @@ function renderCard(stop) {
         <p class="meta">${escapeHtml(stop.transit || "")}</p>
         <p class="note">${escapeHtml(stop.note || "")}</p>
         <div class="card-actions">
-          <a class="mini-link" href="${stop.mapUrl}" target="_blank" rel="noreferrer">Maps</a>
-          <a class="mini-link" href="${stop.imageSearchUrl}" target="_blank" rel="noreferrer">圖片</a>
-          <span class="mini-link">${stop.photos.length} 張照片</span>
+          <a class="mini-link map-direct-link" href="${stop.mapUrl}" target="_blank" rel="noreferrer">Google Maps 地點</a>
+          <a class="mini-link" href="${stop.imageSearchUrl}" target="_blank" rel="noreferrer">Google 圖片搜尋</a>
+          <span class="mini-link">需 Places API</span>
         </div>
       </div>
     </article>
@@ -665,13 +670,26 @@ function setActiveStop(id, rerenderCardState = true) {
 
 function renderPreviewPhoto(stop = getActiveStop()) {
   const photos = stop.photos;
+  if (!photos.length) {
+    preview.media.classList.add("no-google-photo");
+    preview.image.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+    preview.image.alt = "";
+    preview.badge.textContent = "未載入 Google Maps 照片";
+    preview.counter.textContent = "需 API";
+    preview.prevPhoto.disabled = true;
+    preview.nextPhoto.disabled = true;
+    preview.thumbs.innerHTML = "";
+    return;
+  }
+
+  preview.media.classList.remove("no-google-photo");
   activePhotoIndex = (activePhotoIndex + photos.length) % photos.length;
   const currentPhoto = photos[activePhotoIndex];
   const isExact = exactImages.has(currentPhoto);
 
   preview.image.src = currentPhoto;
   preview.image.alt = `${stop.title} 照片 ${activePhotoIndex + 1}`;
-  preview.badge.textContent = isExact ? "實景圖" : "參考圖";
+  preview.badge.textContent = isExact ? "公開實景圖" : "類別參考圖";
   preview.counter.textContent = `${activePhotoIndex + 1} / ${photos.length}`;
   preview.prevPhoto.disabled = photos.length < 2;
   preview.nextPhoto.disabled = photos.length < 2;

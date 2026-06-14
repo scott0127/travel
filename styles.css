@@ -267,10 +267,12 @@ h1 {
 
 .thumb {
   position: relative;
+  display: grid;
+  place-items: center;
   min-height: 112px;
   overflow: hidden;
   border-radius: 8px;
-  background: var(--soft);
+  background: linear-gradient(135deg, rgba(14, 124, 123, 0.12), rgba(228, 111, 79, 0.1));
 }
 
 .thumb img,
@@ -279,6 +281,25 @@ h1 {
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+.thumb-placeholder {
+  display: grid;
+  gap: 5px;
+  padding: 12px;
+  color: var(--teal-dark);
+  text-align: center;
+}
+
+.thumb-placeholder span {
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.thumb-placeholder small {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
 }
 
 .card-body {
@@ -342,6 +363,11 @@ h1 {
   text-decoration: none;
 }
 
+.map-direct-link {
+  background: var(--teal);
+  color: #fff;
+}
+
 .preview-panel {
   position: sticky;
   top: 18px;
@@ -353,6 +379,40 @@ h1 {
   position: relative;
   height: 250px;
   background: var(--soft);
+}
+
+.preview-media.no-google-photo img {
+  display: none;
+}
+
+.photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  padding: 28px;
+  background:
+    linear-gradient(135deg, rgba(14, 124, 123, 0.14), rgba(228, 111, 79, 0.1)),
+    var(--soft);
+  color: var(--teal-dark);
+  text-align: center;
+}
+
+.preview-media.no-google-photo .photo-placeholder {
+  display: grid;
+}
+
+.photo-placeholder strong {
+  font-size: 20px;
+}
+
+.photo-placeholder span {
+  max-width: 320px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
 }
 
 .gallery-button {

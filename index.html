@@ -46,6 +46,10 @@
         <aside class="preview-panel" aria-label="Selected place preview">
           <div class="preview-media">
             <img id="previewImage" alt="" />
+            <div class="photo-placeholder" id="photoPlaceholder">
+              <strong>Google Maps 地點照片</strong>
+              <span>需使用 Google Places API 才能在頁面內嵌該地點相簿照片。</span>
+            </div>
             <button class="gallery-button gallery-button-prev" id="prevPhoto" type="button" aria-label="上一張照片">‹</button>
             <button class="gallery-button gallery-button-next" id="nextPhoto" type="button" aria-label="下一張照片">›</button>
             <span id="previewBadge" class="image-badge">Exact image</span>
@@ -59,13 +63,13 @@
             <p id="previewMeta" class="preview-meta"></p>
             <p id="previewNote" class="preview-note"></p>
             <div class="preview-actions">
-              <a id="previewMap" class="primary-link" href="#" target="_blank" rel="noreferrer">Google Maps</a>
+              <a id="previewMap" class="primary-link" href="#" target="_blank" rel="noreferrer">開啟 Google Maps 地點</a>
               <a id="previewImageSearch" class="ghost-link" href="#" target="_blank" rel="noreferrer">圖片搜尋</a>
             </div>
           </div>
           <iframe id="mapFrame" class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps preview"></iframe>
           <p class="attribution">
-            圖片以 Wikimedia Commons 可嵌入照片優先；餐廳、咖啡廳、飯店若沒有穩定公開照片，使用類別參考圖並附 Google 圖片搜尋。
+            目前不再顯示非 Google Maps 來源的照片。若要在頁面內嵌 Google Maps 該地點相簿照片，需要串接 Google Places API；在沒有 API key 前，請按「開啟 Google Maps 地點」查看真實地點、評論與相簿。
           </p>
         </aside>
       </main>
